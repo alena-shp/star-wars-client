@@ -1,10 +1,13 @@
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
 import { Input } from '@material-ui/core'
-
+import { searchDataRequest } from 'store/actions'
 import styles from './styles.module.scss'
 
 const InputSearch = () => {
   const [valueSearch, setValueSearch] = useState('')
+
+  const dispatch = useDispatch()
 
   const onChangeValueSearch = event => {
     const currentValue = event.target.value
@@ -21,6 +24,7 @@ const InputSearch = () => {
         onChange={onChangeValueSearch}
         className={styles.input}
       />
+      <button onClick={() => dispatch(searchDataRequest(valueSearch))}>search</button>
     </div>
   )
 }
