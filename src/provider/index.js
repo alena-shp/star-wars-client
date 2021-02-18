@@ -46,7 +46,7 @@ export default class swapiProvider {
   _transformFilm = film => {
     return {
       id: this.getIdItem(film),
-      title: film.title,
+      name: film.title,
       director: film.director,
       producer: film.producer,
       releaseDate: film.release_date
