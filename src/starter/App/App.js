@@ -1,7 +1,10 @@
 import React from 'react'
+import { Route, Switch } from 'react-router-dom'
 import Typography from '@material-ui/core/Typography'
 import InputSearch from 'components/InputSearch'
-import ListCards from 'components/ListCards'
+import ListItems from 'components/ListItems'
+import Details from 'components/Details'
+import NotFound from 'components/NotFound'
 
 import styles from './styles.module.scss'
 
@@ -12,7 +15,10 @@ function App() {
         Star Wars Client
       </Typography>
       <InputSearch />
-      <ListCards />
+      <Switch>
+        <Route path="/" component={ListItems} exact />
+        <Route path="/details/:name/:id" component={Details} />
+      </Switch>
     </div>
   )
 }
