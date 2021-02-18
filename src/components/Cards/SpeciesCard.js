@@ -1,46 +1,25 @@
 import React from 'react'
-import Card from '@material-ui/core/Card'
-import CardActions from '@material-ui/core/CardActions'
-import CardContent from '@material-ui/core/CardContent'
 import Link from '@material-ui/core/Link'
-import Typography from '@material-ui/core/Typography'
+import styles from './styles.module.scss'
 
 const SpeciesCard = ({ history, species = {} }) => {
   return (
-    <Card>
-      <CardContent>
-        <Typography color="textSecondary" gutterBottom>
-          {`Name: ${species.name}`}
-        </Typography>
-        <Typography variant="body2" component="p">
-          {`Classification: ${species.classification}`}
-        </Typography>
-        <Typography variant="body2" component="p">
-          {`Designation: ${species.designation}`}
-        </Typography>
-        <Typography variant="body2" component="p">
-          {`Average lifespan: ${species.averageLifespan}`}
-        </Typography>
-        <Typography variant="body2" component="p">
-          {`Average height: ${species.averageHeight}`}
-        </Typography>
-        <Typography variant="body2" component="p">
-          {`Eye colors: ${species.eyeColors}`}
-        </Typography>
-        <Typography variant="body2" component="p">
-          {`Hair colors: ${species.hairColors}`}
-        </Typography>
-        <Typography variant="body2" component="p">
-          {`Skin colors: ${species.skinColors}`}
-        </Typography>
-        <Typography variant="body2" component="p">
-          {`Language: ${species.language}`}
-        </Typography>
-      </CardContent>
-      <CardActions>
+    <div className={styles.card}>
+      <div className={styles.cardContent}>
+        <h2 className={styles.cardTitle}>{species.name}</h2>
+        <p className={styles.cardText}>{`Classification: ${species.classification}`}</p>
+        <p className={styles.cardText}>{`Designation: ${species.designation}`}</p>
+        <p className={styles.cardText}>{`Average lifespan: ${species.averageLifespan}`}</p>
+        <p className={styles.cardText}>{`Average height: ${species.averageHeight}`}</p>
+        <p className={styles.cardText}>{`Eye colors: ${species.eyeColors}`}</p>
+        <p className={styles.cardText}>{`Hair colors: ${species.hairColors}`}</p>
+        <p className={styles.cardText}>{`Skin color: ${species.skinColor}`}</p>
+        <p className={styles.cardText}>{`Language: ${species.language}`}</p>
+      </div>
+      <div className={styles.cardAction}>
         <Link onClick={() => history.goBack()}>Back</Link>
-      </CardActions>
-    </Card>
+      </div>
+    </div>
   )
 }
 

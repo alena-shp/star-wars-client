@@ -1,43 +1,24 @@
 import React from 'react'
-import Card from '@material-ui/core/Card'
-import CardActions from '@material-ui/core/CardActions'
-import CardContent from '@material-ui/core/CardContent'
 import Link from '@material-ui/core/Link'
-import Typography from '@material-ui/core/Typography'
+import styles from './styles.module.scss'
 
 const StarshipsCard = ({ history, starship = {} }) => {
   return (
-    <Card>
-      <CardContent>
-        <Typography color="textSecondary" gutterBottom>
-          {`Name: ${starship.name}`}
-        </Typography>
-        <Typography variant="body2" component="p">
-          {`Model: ${starship.model}`}
-        </Typography>
-        <Typography variant="body2" component="p">
-          {`Manufacturer: ${starship.manufacturer}`}
-        </Typography>
-        <Typography variant="body2" component="p">
-          {`Cost in credits: ${starship.costInCredits}`}
-        </Typography>
-        <Typography variant="body2" component="p">
-          {`Length: ${starship.length}`}
-        </Typography>
-        <Typography variant="body2" component="p">
-          {`Crew: ${starship.crew}`}
-        </Typography>
-        <Typography variant="body2" component="p">
-          {`Passengers: ${starship.passengers}`}
-        </Typography>
-        <Typography variant="body2" component="p">
-          {`Cargo capacity: ${starship.cargoCapacity}`}
-        </Typography>
-      </CardContent>
-      <CardActions>
+    <div className={styles.card}>
+      <div className={styles.cardContent}>
+        <h2 className={styles.cardTitle}>{starship.name}</h2>
+        <p className={styles.cardText}>{`Model: ${starship.model}`}</p>
+        <p className={styles.cardText}>{`Manufacturer: ${starship.manufacturer}`}</p>
+        <p className={styles.cardText}>{`Cost in credits: ${starship.costInCredits}`}</p>
+        <p className={styles.cardText}>{`Length: ${starship.length}`}</p>
+        <p className={styles.cardText}> {`Crew: ${starship.crew}`}</p>
+        <p className={styles.cardText}>{`Passengers: ${starship.passengers}`}</p>
+        <p className={styles.cardText}>{`Cargo capacity: ${starship.cargoCapacity}`}</p>
+      </div>
+      <div className={styles.cardAction}>
         <Link onClick={() => history.goBack()}>Back</Link>
-      </CardActions>
-    </Card>
+      </div>
+    </div>
   )
 }
 

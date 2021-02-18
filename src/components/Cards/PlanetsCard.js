@@ -1,32 +1,20 @@
 import React from 'react'
-import Card from '@material-ui/core/Card'
-import CardActions from '@material-ui/core/CardActions'
-import CardContent from '@material-ui/core/CardContent'
 import Link from '@material-ui/core/Link'
-import Typography from '@material-ui/core/Typography'
+import styles from './styles.module.scss'
 
 const PlanetsCard = ({ history, planet = {} }) => {
-  return (
-    <Card>
-      <CardContent>
-        <Typography color="textSecondary" gutterBottom>
-          {`Name: ${planet.name}`}
-        </Typography>
-        <Typography variant="body2" component="p">
-          {`Population: ${planet.population}`}
-        </Typography>
-        <Typography variant="body2" component="p">
-          {`Rotation period: ${planet.rotationPeriod}`}
-        </Typography>
-        <Typography variant="body2" component="p">
-          {`Diameter: ${planet.diameter}`}
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Link onClick={() => history.goBack()}>Back</Link>
-      </CardActions>
-    </Card>
-  )
+  return
+  ;<div className={styles.card}>
+    <div className={styles.cardContent}>
+      <h2 className={styles.cardTitle}>{planet.name}</h2>
+      <p className={styles.cardText}>{`Population: ${planet.population}`}</p>
+      <p className={styles.cardText}>{`Rotation period: ${planet.rotationPeriod}`}</p>
+      <p className={styles.cardText}>{`Diameter: ${planet.diameter}`}</p>
+    </div>
+    <div className={styles.cardAction}>
+      <Link onClick={() => history.goBack()}>Back</Link>
+    </div>
+  </div>
 }
 
 export default PlanetsCard

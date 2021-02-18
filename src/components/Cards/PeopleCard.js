@@ -1,43 +1,24 @@
 import React from 'react'
-import Card from '@material-ui/core/Card'
-import CardActions from '@material-ui/core/CardActions'
-import CardContent from '@material-ui/core/CardContent'
 import Link from '@material-ui/core/Link'
-import Typography from '@material-ui/core/Typography'
+import styles from './styles.module.scss'
 
 const PeopleCard = ({ history, people = {} }) => {
   return (
-    <Card>
-      <CardContent>
-        <Typography color="textSecondary" gutterBottom>
-          {`Name: ${people.name}`}
-        </Typography>
-        <Typography variant="body2" component="p">
-          {`Gender: ${people.gender}`}
-        </Typography>
-        <Typography variant="body2" component="p">
-          {`Birth year: ${people.birthYear}`}
-        </Typography>
-        <Typography variant="body2" component="p">
-          {`Eye color: ${people.eyeColor}`}
-        </Typography>
-        <Typography variant="body2" component="p">
-          {`Hair color: ${people.hairColor}`}
-        </Typography>
-        <Typography variant="body2" component="p">
-          {`Height: ${people.height}`}
-        </Typography>
-        <Typography variant="body2" component="p">
-          {`Mass: ${people.mass}`}
-        </Typography>
-        <Typography variant="body2" component="p">
-          {`Skin color: ${people.skinColor}`}
-        </Typography>
-      </CardContent>
-      <CardActions>
+    <div className={styles.card}>
+      <div className={styles.cardContent}>
+        <h2 className={styles.cardTitle}>{people.name}</h2>
+        <p className={styles.cardText}>{`Gender: ${people.gender}`}</p>
+        <p className={styles.cardText}>{`Birth year: ${people.birthYear}`}</p>
+        <p className={styles.cardText}>{`Eye color: ${people.eyeColor}`}</p>
+        <p className={styles.cardText}> {`Hair color: ${people.hairColor}`}</p>
+        <p className={styles.cardText}>{`Height: ${people.height}`}</p>
+        <p className={styles.cardText}>{`Mass: ${people.mass}`}</p>
+        <p className={styles.cardText}>{`Skin color: ${people.skinColor}`}</p>
+      </div>
+      <div className={styles.cardAction}>
         <Link onClick={() => history.goBack()}>Back</Link>
-      </CardActions>
-    </Card>
+      </div>
+    </div>
   )
 }
 
