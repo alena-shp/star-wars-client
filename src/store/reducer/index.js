@@ -1,4 +1,9 @@
-import { SEARCH_DATA_REQUEST, SEARCH_DATA_SUCCESS, SEARCH_DATA_FAILURE } from 'store/types'
+import {
+  SEARCH_DATA_REQUEST,
+  SEARCH_DATA_SUCCESS,
+  SEARCH_DATA_FAILURE,
+  SEARCH_DATA_CLEAR
+} from 'store/types'
 
 const initialState = {
   searchData: {},
@@ -24,6 +29,12 @@ const reducer = (state = initialState, action) => {
         loading: false,
         searchData: {},
         err: action.payload
+      }
+    case SEARCH_DATA_CLEAR:
+      return {
+        loading: false,
+        searchData: {},
+        err: ''
       }
     default:
       return state

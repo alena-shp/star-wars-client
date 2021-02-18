@@ -1,4 +1,9 @@
-import { SEARCH_DATA_REQUEST, SEARCH_DATA_SUCCESS, SEARCH_DATA_FAILURE } from 'store/types'
+import {
+  SEARCH_DATA_REQUEST,
+  SEARCH_DATA_SUCCESS,
+  SEARCH_DATA_FAILURE,
+  SEARCH_DATA_CLEAR
+} from 'store/types'
 
 export const searchDataRequest = searchValue => ({
   type: SEARCH_DATA_REQUEST,
@@ -15,6 +20,6 @@ export const searchDataFailure = err => ({
   payload: err
 })
 
-export const fetchSearchData = () => ({
-  type: 'FETCHED_SEARCH_DATA'
+export const searchDataClear = () => ({
+  type: 'SEARCH_DATA_CLEAR'
 })
