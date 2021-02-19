@@ -4,7 +4,6 @@ import Typography from '@material-ui/core/Typography'
 import InputSearch from 'components/InputSearch'
 import ListItems from 'components/ListItems'
 import Details from 'components/Details'
-import NotFound from 'components/NotFound'
 
 import styles from './styles.module.scss'
 

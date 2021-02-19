@@ -1,4 +1,5 @@
 import React from 'react'
+import _ from 'lodash'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import Typography from '@material-ui/core/Typography'
@@ -19,8 +20,11 @@ const ListItems = () => {
     return <p>Sorry, something went wrong...</p>
   }
 
-  if (Object.keys(searchData).length === 0) {
-    return <p>No resources</p>
+  //check the received data
+  //if the object has keys - request is completed,
+  //if the object has no properties - no data was found
+  if (Object.keys(searchData).length !== 0 && Object.values(searchData).flat().length === 0) {
+    return <p>Not found, try again</p>
   }
 
   return (
